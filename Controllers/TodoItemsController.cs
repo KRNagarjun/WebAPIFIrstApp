@@ -9,6 +9,7 @@ using ToDoAPI.Models;
 
 namespace ToDoAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
@@ -85,6 +86,10 @@ namespace ToDoAPI.Controllers
         }
 
         // DELETE: api/TodoItems/5
+        /// <summary>
+        /// Deletes a specific TodoItem.
+        /// </summary>
+        /// <param name="id"></param>  
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
